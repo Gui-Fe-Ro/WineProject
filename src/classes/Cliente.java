@@ -78,7 +78,7 @@ public class Cliente {
                 + "\n Telefone: " + telefone 
                 + "\n Endereço: " + endereco;*/
         
-        return "Cliente" + "; idCliente: " + idCliente + "; nome: " + nome + "; email: " + email + "; telefone: " + telefone + "; endereco: " + endereco;
+        return idCliente + ";" + nome + ";" + email + ";" + telefone + ";" + endereco;
     }
     
 }

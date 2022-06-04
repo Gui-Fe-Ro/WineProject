@@ -5,11 +5,13 @@
 package telas;
 
 import classes.Cliente;
+import classes.Produto;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -103,6 +105,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jbt_cadastroProduto.setText("Cadastrar produto");
+        jbt_cadastroProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_cadastroProdutoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,17 +238,34 @@ public class TelaPrincipal extends javax.swing.JFrame {
             
             //Gravando dados no arquivo txt
             File arquivo = new File( "C:\\Users\\IFTM\\Desktop\\IFTM\\POOV\\Vinhos\\Clientes.txt" );
-            fw = new FileWriter( arquivo, true );
-            BufferedWriter bw = new BufferedWriter( fw );
-            //escreve o conteúdo no arquivo
-            bw.write(cliente.toString());
-            //quebra de linha
-            bw.newLine();
+            boolean existe = arquivo.exists();
+            System.out.println(existe);
+            
+            //Criando estrutura csv
+            if(!existe){
+                fw = new FileWriter(arquivo, true);
+                BufferedWriter bw = new BufferedWriter( fw );
+                //escreve o conteúdo no arquivo
+                bw.write("idCliente;nome;email;telefone;endereco\n" + cliente.toString());
+                bw.newLine();
             //fecha os recursos
-            bw.close();
-            fw.close();
-            System.out.println("\n \n Chegou aqui");
-            System.out.println(cliente.toString());
+                bw.close();
+                fw.close();
+                System.out.println("idCliente;nome;email;telefone;endereco\n" + cliente.toString());
+            }else{
+                fw = new FileWriter(arquivo, true);
+                BufferedWriter bw = new BufferedWriter( fw );
+                //escreve o conteúdo no arquivo
+                bw.write(cliente.toString());
+                //quebra de linha
+                bw.newLine();
+                //fecha os recursos
+                bw.close();
+                fw.close();
+                System.out.println(cliente.toString());
+            }
+            
+            
         } catch (IOException ex) {
             Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -255,6 +279,61 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jbt_cadastroClienteActionPerformed
+
+    private void jbt_cadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_cadastroProdutoActionPerformed
+        // TODO add your handling code here:
+        FileWriter fw = null;
+        try {
+            // TODO add your handling code here:
+            Produto produto = new Produto();
+            produto.setIdProduto(jtf_idProduto.getText());
+            produto.setValor(Float.parseFloat(jtf_valor.getText()));
+            produto.setDescricao(jtf_descricao.getText());
+            produto.setTipoDaUva(jtf_tipoDaUva.getText());
+            produto.setAnoDaSafra(Integer.parseInt(jtf_anoDaSafra.getText()));
+            produto.setQuantidade(Integer.parseInt(jtf_quantidade.getText()));
+            produto.setDiaDaVenda(LocalDate.parse(jtf_diaDaVenda.getText()));
+            
+            //Gravando dados no arquivo txt
+            File arquivo = new File( "C:\\Users\\IFTM\\Desktop\\IFTM\\POOV\\Vinhos\\Produtos.txt" );
+            boolean existe = arquivo.exists();
+            System.out.println(existe);
+            
+            //Criando estrutura csv
+            if(!existe){
+                fw = new FileWriter(arquivo, true);
+                BufferedWriter bw = new BufferedWriter( fw );
+                //escreve o conteúdo no arquivo
+                bw.write("idProduto;valor;descricao;tipoDaUva;anoDaSafra;quantidade;diaDaVenda\n" + produto.toString());
+                bw.newLine();
+            //fecha os recursos
+                bw.close();
+                fw.close();
+                System.out.println("idCliente;nome;email;telefone;endereco\n" + produto.toString());
+            }else{
+                fw = new FileWriter(arquivo, true);
+                BufferedWriter bw = new BufferedWriter( fw );
+                //escreve o conteúdo no arquivo
+                bw.write(produto.toString());
+                //quebra de linha
+                bw.newLine();
+                //fecha os recursos
+                bw.close();
+                fw.close();
+                System.out.println(produto.toString());
+            }
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jbt_cadastroProdutoActionPerformed
 
     /**
      * @param args the command line arguments
