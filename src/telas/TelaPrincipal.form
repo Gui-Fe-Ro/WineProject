@@ -23,13 +23,245 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlb_idCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlb_nomeCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlb_email" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlb_telefone" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jtf_idCliente" max="32767" attributes="0"/>
+                          <Component id="jtf_nome" max="32767" attributes="0"/>
+                          <Component id="jtf_email" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtf_telefone" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jlb_tituloClientes" min="-2" pref="350" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jlb_endereco" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jbt_cadastroCliente" max="32767" attributes="0"/>
+                          <Component id="jtf_endereco" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jlb_quantidade" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jtf_quantidade" min="-2" pref="255" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jlb_anoDaSafra" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jtf_anoDaSafra" min="-2" pref="256" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jlb_tituloVinhos" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jlb_tipoDaUva" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlb_descricao" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlb_valor" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlb_idVinho" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtf_tipoDaUva" max="32767" attributes="0"/>
+                              <Component id="jtf_descricao" max="32767" attributes="0"/>
+                              <Component id="jtf_valor" max="32767" attributes="0"/>
+                              <Component id="jtf_idProduto" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jlb_diaDaVenda" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jbt_cadastroProduto" pref="254" max="32767" attributes="0"/>
+                              <Component id="jtf_diaDaVenda" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_tituloClientes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlb_tituloVinhos" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_idCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlb_idVinho" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_idCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_idProduto" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_nomeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlb_valor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_nome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_valor" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_email" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlb_descricao" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_email" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_descricao" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_telefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlb_tipoDaUva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_telefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_tipoDaUva" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_endereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlb_anoDaSafra" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_endereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_anoDaSafra" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbt_cadastroCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_diaDaVenda" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_diaDaVenda" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jbt_cadastroProduto" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="204" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jlb_tituloClientes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cadastro de clientes"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_idCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID cliente:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_nomeCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nome:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_email">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="E-mail:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_telefone">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Telefone:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_endereco">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_tituloVinhos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cadastro de vinhos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_idVinho">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID vinho:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_valor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Valor:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_descricao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_tipoDaUva">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tipo da uva:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_anoDaSafra">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ano da safra:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_quantidade">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quantidade:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_diaDaVenda">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dia da venda:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_idCliente">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_nome">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_email">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_telefone">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_endereco">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_diaDaVenda">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_quantidade">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_anoDaSafra">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_tipoDaUva">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_descricao">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_valor">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_idProduto">
+    </Component>
+    <Component class="javax.swing.JButton" name="jbt_cadastroCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cadrastrar cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbt_cadastroProduto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cadastrar produto"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

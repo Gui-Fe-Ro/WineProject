@@ -26,17 +26,178 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jlb_tituloClientes = new javax.swing.JLabel();
+        jlb_idCliente = new javax.swing.JLabel();
+        jlb_nomeCliente = new javax.swing.JLabel();
+        jlb_email = new javax.swing.JLabel();
+        jlb_telefone = new javax.swing.JLabel();
+        jlb_endereco = new javax.swing.JLabel();
+        jlb_tituloVinhos = new javax.swing.JLabel();
+        jlb_idVinho = new javax.swing.JLabel();
+        jlb_valor = new javax.swing.JLabel();
+        jlb_descricao = new javax.swing.JLabel();
+        jlb_tipoDaUva = new javax.swing.JLabel();
+        jlb_anoDaSafra = new javax.swing.JLabel();
+        jlb_quantidade = new javax.swing.JLabel();
+        jlb_diaDaVenda = new javax.swing.JLabel();
+        jtf_idCliente = new javax.swing.JTextField();
+        jtf_nome = new javax.swing.JTextField();
+        jtf_email = new javax.swing.JTextField();
+        jtf_telefone = new javax.swing.JTextField();
+        jtf_endereco = new javax.swing.JTextField();
+        jtf_diaDaVenda = new javax.swing.JTextField();
+        jtf_quantidade = new javax.swing.JTextField();
+        jtf_anoDaSafra = new javax.swing.JTextField();
+        jtf_tipoDaUva = new javax.swing.JTextField();
+        jtf_descricao = new javax.swing.JTextField();
+        jtf_valor = new javax.swing.JTextField();
+        jtf_idProduto = new javax.swing.JTextField();
+        jbt_cadastroCliente = new javax.swing.JButton();
+        jbt_cadastroProduto = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jlb_tituloClientes.setText("Cadastro de clientes");
+
+        jlb_idCliente.setText("ID cliente:");
+
+        jlb_nomeCliente.setText("Nome:");
+
+        jlb_email.setText("E-mail:");
+
+        jlb_telefone.setText("Telefone:");
+
+        jlb_endereco.setText("Endereço:");
+
+        jlb_tituloVinhos.setText("Cadastro de vinhos");
+
+        jlb_idVinho.setText("ID vinho:");
+
+        jlb_valor.setText("Valor:");
+
+        jlb_descricao.setText("Descrição:");
+
+        jlb_tipoDaUva.setText("Tipo da uva:");
+
+        jlb_anoDaSafra.setText("Ano da safra:");
+
+        jlb_quantidade.setText("Quantidade:");
+
+        jlb_diaDaVenda.setText("Dia da venda:");
+
+        jbt_cadastroCliente.setText("Cadrastrar cliente");
+
+        jbt_cadastroProduto.setText("Cadastrar produto");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlb_idCliente)
+                            .addComponent(jlb_nomeCliente)
+                            .addComponent(jlb_email)
+                            .addComponent(jlb_telefone))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtf_idCliente)
+                            .addComponent(jtf_nome)
+                            .addComponent(jtf_email)
+                            .addComponent(jtf_telefone)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlb_tituloClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlb_endereco)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbt_cadastroCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jtf_endereco))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jlb_quantidade)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlb_anoDaSafra)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_anoDaSafra, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jlb_tituloVinhos)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jlb_tipoDaUva)
+                                .addComponent(jlb_descricao)
+                                .addComponent(jlb_valor)
+                                .addComponent(jlb_idVinho))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jtf_tipoDaUva)
+                                .addComponent(jtf_descricao)
+                                .addComponent(jtf_valor)
+                                .addComponent(jtf_idProduto)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jlb_diaDaVenda)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jbt_cadastroProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                                .addComponent(jtf_diaDaVenda)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_tituloClientes)
+                    .addComponent(jlb_tituloVinhos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_idCliente)
+                    .addComponent(jlb_idVinho)
+                    .addComponent(jtf_idCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_idProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_nomeCliente)
+                    .addComponent(jlb_valor)
+                    .addComponent(jtf_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_email)
+                    .addComponent(jlb_descricao)
+                    .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_telefone)
+                    .addComponent(jlb_tipoDaUva)
+                    .addComponent(jtf_telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_tipoDaUva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_endereco)
+                    .addComponent(jlb_anoDaSafra)
+                    .addComponent(jtf_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_anoDaSafra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_quantidade)
+                    .addComponent(jtf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbt_cadastroCliente))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_diaDaVenda)
+                    .addComponent(jtf_diaDaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbt_cadastroProduto)
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +239,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jbt_cadastroCliente;
+    private javax.swing.JButton jbt_cadastroProduto;
+    private javax.swing.JLabel jlb_anoDaSafra;
+    private javax.swing.JLabel jlb_descricao;
+    private javax.swing.JLabel jlb_diaDaVenda;
+    private javax.swing.JLabel jlb_email;
+    private javax.swing.JLabel jlb_endereco;
+    private javax.swing.JLabel jlb_idCliente;
+    private javax.swing.JLabel jlb_idVinho;
+    private javax.swing.JLabel jlb_nomeCliente;
+    private javax.swing.JLabel jlb_quantidade;
+    private javax.swing.JLabel jlb_telefone;
+    private javax.swing.JLabel jlb_tipoDaUva;
+    private javax.swing.JLabel jlb_tituloClientes;
+    private javax.swing.JLabel jlb_tituloVinhos;
+    private javax.swing.JLabel jlb_valor;
+    private javax.swing.JTextField jtf_anoDaSafra;
+    private javax.swing.JTextField jtf_descricao;
+    private javax.swing.JTextField jtf_diaDaVenda;
+    private javax.swing.JTextField jtf_email;
+    private javax.swing.JTextField jtf_endereco;
+    private javax.swing.JTextField jtf_idCliente;
+    private javax.swing.JTextField jtf_idProduto;
+    private javax.swing.JTextField jtf_nome;
+    private javax.swing.JTextField jtf_quantidade;
+    private javax.swing.JTextField jtf_telefone;
+    private javax.swing.JTextField jtf_tipoDaUva;
+    private javax.swing.JTextField jtf_valor;
     // End of variables declaration//GEN-END:variables
 }
