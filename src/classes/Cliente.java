@@ -68,14 +68,17 @@ public class Cliente {
     }
     
     //toString
+    //Alterei o toString para que ficasse no formato para guardar no txt
     @Override
     public String toString() {
-        return "\n Cliente: " 
+        /*return "\n Cliente: " 
                 + "\n Id cliente: " + idCliente 
                 + "\n Nome: " + nome 
                 + "\n E-mail: " + email 
                 + "\n Telefone: " + telefone 
-                + "\n Endereço: " + endereco;
+                + "\n Endereço: " + endereco;*/
+        
+        return "Cliente" + "; idCliente: " + idCliente + "; nome: " + nome + "; email: " + email + "; telefone: " + telefone + "; endereco: " + endereco;
     }
     
 }

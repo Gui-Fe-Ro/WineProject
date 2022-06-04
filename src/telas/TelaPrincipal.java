@@ -4,6 +4,16 @@
  */
 package telas;
 
+import classes.Cliente;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 /**
  *
  * @author IFTM
@@ -86,6 +96,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jlb_diaDaVenda.setText("Dia da venda:");
 
         jbt_cadastroCliente.setText("Cadrastrar cliente");
+        jbt_cadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_cadastroClienteActionPerformed(evt);
+            }
+        });
 
         jbt_cadastroProduto.setText("Cadastrar produto");
 
@@ -202,6 +217,44 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbt_cadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_cadastroClienteActionPerformed
+        FileWriter fw = null;
+        try {
+            // TODO add your handling code here:
+            Cliente cliente = new Cliente();
+            cliente.setIdCliente(jtf_idCliente.getText());
+            cliente.setNome(jtf_nome.getText());
+            cliente.setEmail(jtf_email.getText());
+            cliente.setTelefone(jtf_telefone.getText());
+            cliente.setEndereco(jtf_endereco.getText());
+            
+            //Gravando dados no arquivo txt
+            File arquivo = new File( "C:\\Users\\IFTM\\Desktop\\IFTM\\POOV\\Vinhos\\Clientes.txt" );
+            fw = new FileWriter( arquivo, true );
+            BufferedWriter bw = new BufferedWriter( fw );
+            //escreve o conteúdo no arquivo
+            bw.write(cliente.toString());
+            //quebra de linha
+            bw.newLine();
+            //fecha os recursos
+            bw.close();
+            fw.close();
+            System.out.println("\n \n Chegou aqui");
+            System.out.println(cliente.toString());
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+       
+        
+        
+    }//GEN-LAST:event_jbt_cadastroClienteActionPerformed
 
     /**
      * @param args the command line arguments

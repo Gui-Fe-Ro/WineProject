@@ -94,14 +94,7 @@ public class Produto {
     //toString
     @Override
     public String toString() {
-        return "\n Produto: " 
-                + "\n Id produto: " + idProduto 
-                + "\n Valor: " + valor 
-                + "\n Descrição: " + descricao 
-                + "\n Tipo da uva: " + tipoDaUva 
-                + "\n Ano da safra: " + anoDaSafra 
-                + "\n Quantidade: " + quantidade 
-                + "\n Dia da venda: " + diaDaVenda;
+        return "Produto: " + "; idProduto: " + idProduto + "; valor: " + valor + "; descricao: " + descricao + "; tipoDaUva: " + tipoDaUva + "; anoDaSafra: " + anoDaSafra + "; quantidade: " + quantidade + "; diaDaVenda: " + diaDaVenda;
     }
     
 }

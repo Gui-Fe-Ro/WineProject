@@ -257,6 +257,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadrastrar cliente"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbt_cadastroClienteActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jbt_cadastroProduto">
       <Properties>
