@@ -6,14 +6,18 @@ package telas;
 
 import classes.Cliente;
 import classes.Produto;
+import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -66,6 +70,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jtf_idProduto = new javax.swing.JTextField();
         jbt_cadastroCliente = new javax.swing.JButton();
         jbt_cadastroProduto = new javax.swing.JButton();
+        jlb_tituloClienteVinho = new javax.swing.JLabel();
+        jlb_idCliente_clienteVinho = new javax.swing.JLabel();
+        jtf_idCliente_clienteVinho = new javax.swing.JTextField();
+        jlb_idVinho_clienteVinho = new javax.swing.JLabel();
+        jtf_idVinho_clienteVinho = new javax.swing.JTextField();
+        jbt_clienteVinho = new javax.swing.JButton();
+        jbt_abrirVinculos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,6 +122,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jlb_tituloClienteVinho.setText("Vincular cliente e vinho");
+
+        jlb_idCliente_clienteVinho.setText("ID cliente:");
+
+        jlb_idVinho_clienteVinho.setText("ID vinho:");
+
+        jbt_clienteVinho.setText("Vincular cliente e vinho");
+        jbt_clienteVinho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_clienteVinhoActionPerformed(evt);
+            }
+        });
+
+        jbt_abrirVinculos.setText("Vinculos");
+        jbt_abrirVinculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_abrirVinculosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -120,55 +151,70 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlb_idCliente)
-                            .addComponent(jlb_nomeCliente)
-                            .addComponent(jlb_email)
-                            .addComponent(jlb_telefone))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlb_idCliente)
+                                    .addComponent(jlb_nomeCliente)
+                                    .addComponent(jlb_email)
+                                    .addComponent(jlb_telefone))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtf_idCliente)
+                                    .addComponent(jtf_nome)
+                                    .addComponent(jtf_email)
+                                    .addComponent(jtf_telefone)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jlb_endereco)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbt_cadastroCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jtf_endereco)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jlb_tituloClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlb_tituloClienteVinho)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jlb_idCliente_clienteVinho)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtf_idCliente_clienteVinho)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtf_idCliente)
-                            .addComponent(jtf_nome)
-                            .addComponent(jtf_email)
-                            .addComponent(jtf_telefone)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlb_tituloClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlb_endereco)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbt_cadastroCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jtf_endereco))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jlb_quantidade)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlb_anoDaSafra)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtf_anoDaSafra, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jlb_tituloVinhos)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jlb_tipoDaUva)
-                                .addComponent(jlb_descricao)
-                                .addComponent(jlb_valor)
-                                .addComponent(jlb_idVinho))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jtf_tipoDaUva)
-                                .addComponent(jtf_descricao)
-                                .addComponent(jtf_valor)
-                                .addComponent(jtf_idProduto)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jlb_diaDaVenda)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jlb_quantidade)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtf_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jlb_anoDaSafra)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtf_anoDaSafra, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jbt_cadastroProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
-                                .addComponent(jtf_diaDaVenda)))))
+                                .addComponent(jlb_tituloVinhos)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jlb_tipoDaUva)
+                                        .addComponent(jlb_descricao)
+                                        .addComponent(jlb_valor)
+                                        .addComponent(jlb_idVinho))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jtf_tipoDaUva)
+                                        .addComponent(jtf_descricao)
+                                        .addComponent(jtf_valor)
+                                        .addComponent(jtf_idProduto)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jlb_diaDaVenda)
+                                        .addComponent(jlb_idVinho_clienteVinho))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jbt_cadastroProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                                        .addComponent(jtf_diaDaVenda)
+                                        .addComponent(jtf_idVinho_clienteVinho))))))
+                    .addComponent(jbt_clienteVinho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbt_abrirVinculos, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -219,7 +265,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jtf_diaDaVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbt_cadastroProduto)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlb_tituloClienteVinho)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_idCliente_clienteVinho)
+                    .addComponent(jtf_idCliente_clienteVinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlb_idVinho_clienteVinho)
+                    .addComponent(jtf_idVinho_clienteVinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbt_clienteVinho)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbt_abrirVinculos)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -335,6 +393,97 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbt_cadastroProdutoActionPerformed
 
+    private void jbt_clienteVinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_clienteVinhoActionPerformed
+        // TODO add your handling code here:
+        FileWriter fw = null;
+        try {
+            // TODO add your handling code here:
+            
+            //Gravando dados no arquivo txt
+            File arquivo = new File( "C:\\Users\\IFTM\\Desktop\\IFTM\\POOV\\Vinhos\\ClienteVinho.txt" );
+            boolean existe = arquivo.exists();
+            System.out.println(existe);
+            
+            //Criando estrutura csv
+            if(!existe){
+                fw = new FileWriter(arquivo, true);
+                BufferedWriter bw = new BufferedWriter( fw );
+                //escreve o conteúdo no arquivo
+                bw.write("idCliente;idVinho\n" + jtf_idCliente_clienteVinho.getText() + ";" + jtf_idVinho_clienteVinho.getText());
+                bw.newLine();
+            //fecha os recursos
+                bw.close();
+                fw.close();
+            }else{
+                fw = new FileWriter(arquivo, true);
+                BufferedWriter bw = new BufferedWriter( fw );
+                FileReader fr = new FileReader( arquivo );
+                BufferedReader br = new BufferedReader( fr );
+                ArrayList<String> listaDeVinculos = new ArrayList<>();
+                String[] textoSeparado;
+                
+                int cont = 0;
+                //escreve o conteúdo no arquivo
+                
+                //Vai verificar se o id já está inserido
+                int verificaEntrada=0; 
+                //Fazendo a verificação
+                while(verificaEntrada!=1){
+                    while( br.ready() ){
+                        
+                        
+                        //lê a proxima linha
+                        System.out.println("Entrou2");
+                        String linha = br.readLine();
+                        System.out.println(linha);
+                        if(cont>0){                        
+                            System.out.println("Entrou3");
+                            //faz algo com a linha
+                            listaDeVinculos.add(linha);
+                        }
+                        cont = cont+1;            
+                    
+                    }
+                    
+                    for(int i=0;i<listaDeVinculos.size();i++){
+                        textoSeparado = listaDeVinculos.get(i).split(";");
+                        int idCliente = Integer.parseInt(textoSeparado[0]);
+                        if(idCliente==Integer.parseInt(jtf_idCliente_clienteVinho.getText())){
+                            JOptionPane.showInputDialog("O id do cliente já existe. Digite outro.");
+                        }else{
+                            verificaEntrada=1;
+                        }
+                    }
+                    
+                }              
+                
+                bw.write(jtf_idCliente_clienteVinho.getText() + ";" + jtf_idVinho_clienteVinho.getText());
+                //quebra de linha
+                bw.newLine();
+                //fecha os recursos
+                bw.close();
+                fw.close();
+            }
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jbt_clienteVinhoActionPerformed
+
+    private void jbt_abrirVinculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_abrirVinculosActionPerformed
+        // TODO add your handling code here:
+        TabelaVinhos tabelaVinhos = new TabelaVinhos();
+        tabelaVinhos.setVisible(true);
+        tabelaVinhos.setLocationRelativeTo(null);//Para centralizar a tela
+    }//GEN-LAST:event_jbt_abrirVinculosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -371,19 +520,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jbt_abrirVinculos;
     private javax.swing.JButton jbt_cadastroCliente;
     private javax.swing.JButton jbt_cadastroProduto;
+    private javax.swing.JButton jbt_clienteVinho;
     private javax.swing.JLabel jlb_anoDaSafra;
     private javax.swing.JLabel jlb_descricao;
     private javax.swing.JLabel jlb_diaDaVenda;
     private javax.swing.JLabel jlb_email;
     private javax.swing.JLabel jlb_endereco;
     private javax.swing.JLabel jlb_idCliente;
+    private javax.swing.JLabel jlb_idCliente_clienteVinho;
     private javax.swing.JLabel jlb_idVinho;
+    private javax.swing.JLabel jlb_idVinho_clienteVinho;
     private javax.swing.JLabel jlb_nomeCliente;
     private javax.swing.JLabel jlb_quantidade;
     private javax.swing.JLabel jlb_telefone;
     private javax.swing.JLabel jlb_tipoDaUva;
+    private javax.swing.JLabel jlb_tituloClienteVinho;
     private javax.swing.JLabel jlb_tituloClientes;
     private javax.swing.JLabel jlb_tituloVinhos;
     private javax.swing.JLabel jlb_valor;
@@ -393,7 +547,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jtf_email;
     private javax.swing.JTextField jtf_endereco;
     private javax.swing.JTextField jtf_idCliente;
+    private javax.swing.JTextField jtf_idCliente_clienteVinho;
     private javax.swing.JTextField jtf_idProduto;
+    private javax.swing.JTextField jtf_idVinho_clienteVinho;
     private javax.swing.JTextField jtf_nome;
     private javax.swing.JTextField jtf_quantidade;
     private javax.swing.JTextField jtf_telefone;

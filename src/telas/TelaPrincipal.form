@@ -26,71 +26,92 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jlb_idCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlb_nomeCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlb_email" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlb_telefone" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jtf_idCliente" max="32767" attributes="0"/>
-                          <Component id="jtf_nome" max="32767" attributes="0"/>
-                          <Component id="jtf_email" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jtf_telefone" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jlb_tituloClientes" min="-2" pref="350" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jlb_endereco" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jbt_cadastroCliente" max="32767" attributes="0"/>
-                          <Component id="jtf_endereco" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jlb_quantidade" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jtf_quantidade" min="-2" pref="255" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="jlb_anoDaSafra" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jtf_anoDaSafra" min="-2" pref="256" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jlb_tituloVinhos" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jlb_tipoDaUva" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jlb_descricao" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jlb_valor" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jlb_idVinho" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jlb_idCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlb_nomeCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlb_email" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlb_telefone" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jtf_idCliente" max="32767" attributes="0"/>
+                                  <Component id="jtf_nome" max="32767" attributes="0"/>
+                                  <Component id="jtf_email" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jtf_telefone" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtf_tipoDaUva" max="32767" attributes="0"/>
-                              <Component id="jtf_descricao" max="32767" attributes="0"/>
-                              <Component id="jtf_valor" max="32767" attributes="0"/>
-                              <Component id="jtf_idProduto" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jlb_endereco" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jbt_cadastroCliente" max="32767" attributes="0"/>
+                                  <Component id="jtf_endereco" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jlb_tituloClientes" min="-2" pref="350" max="-2" attributes="0"/>
+                                  <Component id="jlb_tituloClienteVinho" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jlb_idCliente_clienteVinho" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jtf_idCliente_clienteVinho" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jlb_diaDaVenda" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jlb_quantidade" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jtf_quantidade" min="-2" pref="255" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jlb_anoDaSafra" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jtf_anoDaSafra" min="-2" pref="256" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jbt_cadastroProduto" pref="254" max="32767" attributes="0"/>
-                              <Component id="jtf_diaDaVenda" max="32767" attributes="0"/>
+                              <Component id="jlb_tituloVinhos" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jlb_tipoDaUva" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlb_descricao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlb_valor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlb_idVinho" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jtf_tipoDaUva" max="32767" attributes="0"/>
+                                      <Component id="jtf_descricao" max="32767" attributes="0"/>
+                                      <Component id="jtf_valor" max="32767" attributes="0"/>
+                                      <Component id="jtf_idProduto" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jlb_diaDaVenda" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlb_idVinho_clienteVinho" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jbt_cadastroProduto" pref="254" max="32767" attributes="0"/>
+                                      <Component id="jtf_diaDaVenda" max="32767" attributes="0"/>
+                                      <Component id="jtf_idVinho_clienteVinho" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
+                  </Group>
+                  <Component id="jbt_clienteVinho" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jbt_abrirVinculos" min="-2" pref="350" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -153,7 +174,20 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jbt_cadastroProduto" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="204" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlb_tituloClienteVinho" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_idCliente_clienteVinho" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_idCliente_clienteVinho" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlb_idVinho_clienteVinho" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_idVinho_clienteVinho" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jbt_clienteVinho" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jbt_abrirVinculos" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -267,6 +301,41 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbt_cadastroProdutoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_tituloClienteVinho">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Vincular cliente e vinho"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_idCliente_clienteVinho">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID cliente:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_idCliente_clienteVinho">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlb_idVinho_clienteVinho">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID vinho:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_idVinho_clienteVinho">
+    </Component>
+    <Component class="javax.swing.JButton" name="jbt_clienteVinho">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Vincular cliente e vinho"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbt_clienteVinhoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbt_abrirVinculos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Vinculos"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbt_abrirVinculosActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
