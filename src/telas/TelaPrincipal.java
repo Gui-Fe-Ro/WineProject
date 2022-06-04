@@ -422,7 +422,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 ArrayList<String> listaDeVinculos = new ArrayList<>();
                 String[] textoSeparado;
                 
-                int cont = 0;
+                int cont=0, retornoJOption=0, idCliente=0;
                 //escreve o conteúdo no arquivo
                 
                 //Vai verificar se o id já está inserido
@@ -431,38 +431,57 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 while(verificaEntrada!=1){
                     while( br.ready() ){
                         
-                        
-                        //lê a proxima linha
-                        System.out.println("Entrou2");
                         String linha = br.readLine();
                         System.out.println(linha);
-                        if(cont>0){                        
-                            System.out.println("Entrou3");
+                        if(cont>0){                       
                             //faz algo com a linha
                             listaDeVinculos.add(linha);
                         }
                         cont = cont+1;            
                     
                     }
-                    
+                    System.out.println("Tamanho da lista: "+listaDeVinculos.size());
                     for(int i=0;i<listaDeVinculos.size();i++){
                         textoSeparado = listaDeVinculos.get(i).split(";");
-                        int idCliente = Integer.parseInt(textoSeparado[0]);
-                        if(idCliente==Integer.parseInt(jtf_idCliente_clienteVinho.getText())){
-                            JOptionPane.showInputDialog("O id do cliente já existe. Digite outro.");
-                        }else{
+                        idCliente = Integer.parseInt(textoSeparado[0]);
+                        System.out.println(idCliente);
+                        System.out.println(Integer.parseInt(jtf_idCliente_clienteVinho.getText()));
+                        if(idCliente!=Integer.parseInt(jtf_idCliente_clienteVinho.getText())){
                             verificaEntrada=1;
+                            bw.write(jtf_idCliente_clienteVinho.getText() + ";" + jtf_idVinho_clienteVinho.getText());
+                            //quebra de linha
+                            bw.newLine();
+                            //fecha os recursos
+                            br.close();
+                            fr.close();
+                            bw.close();
+                            fw.close();
+                        }else{                   
+                            
+                            retornoJOption = Integer.parseInt(JOptionPane.showInputDialog("O id do cliente já existe. \n Deseja inserir um novo id de vinho nesse idCliente? \n Digite: \n 1 - Para sim \n 2 - Para não"));
+                            if(retornoJOption==1){
+                                cont=0;
+                                while( br.ready() ){
+                        
+                                    String linha = br.readLine();
+                                    System.out.println(linha);
+                                    if(cont>0&&cont+1==i){                       
+                                    //faz algo com a linha
+                                        bw.write(linha+","+jtf_idVinho_clienteVinho.getText());
+                                    }
+                                    cont = cont+1;            
+                    
+                                }
+                            }
+                            
+                            bw.close();
+                            fw.close();
+                            br.close();
+                            fr.close();
                         }
                     }
                     
                 }              
-                
-                bw.write(jtf_idCliente_clienteVinho.getText() + ";" + jtf_idVinho_clienteVinho.getText());
-                //quebra de linha
-                bw.newLine();
-                //fecha os recursos
-                bw.close();
-                fw.close();
             }
             
             
