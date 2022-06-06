@@ -15,6 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -325,12 +326,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             
             
         } catch (IOException ex) {
-            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erro ao inserir cliente");
         } finally {
             try {
                 fw.close();
             } catch (IOException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Erro ao fechar writer cliente");
             }
         }
        
@@ -383,12 +384,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             
             
         } catch (IOException ex) {
-            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erro inserção vinhos");
         } finally {
             try {
                 fw.close();
             } catch (IOException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Falha ao fechar writer vinho");
             }
         }
     }//GEN-LAST:event_jbt_cadastroProdutoActionPerformed
@@ -428,7 +429,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 //Vai verificar se o id já está inserido
                 int verificaEntrada=0; 
                 //Fazendo a verificação
-                while(verificaEntrada!=1){
+                //while(verificaEntrada!=1){
                     while( br.ready() ){
                         
                         String linha = br.readLine();
@@ -437,41 +438,49 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             //faz algo com a linha
                             listaDeVinculos.add(linha);
                         }
-                        cont = cont+1;            
-                    
+                        cont = cont+1; 
                     }
                     System.out.println("Tamanho da lista: "+listaDeVinculos.size());
                     for(int i=0;i<listaDeVinculos.size();i++){
+                        System.out.println("i: "+ i);
                         textoSeparado = listaDeVinculos.get(i).split(";");
                         idCliente = Integer.parseInt(textoSeparado[0]);
-                        System.out.println(idCliente);
-                        System.out.println(Integer.parseInt(jtf_idCliente_clienteVinho.getText()));
+                        
+                        System.out.println("idCLiente"+idCliente);
+                        System.out.println("Mensagem inserida na box"+Integer.parseInt(jtf_idCliente_clienteVinho.getText()));
                         if(idCliente!=Integer.parseInt(jtf_idCliente_clienteVinho.getText())){
-                            verificaEntrada=1;
-                            bw.write(jtf_idCliente_clienteVinho.getText() + ";" + jtf_idVinho_clienteVinho.getText());
+                            verificaEntrada=0;
+                            //bw.write(jtf_idCliente_clienteVinho.getText() + ";" + jtf_idVinho_clienteVinho.getText());
                             //quebra de linha
-                            bw.newLine();
+                            //bw.newLine();
                             //fecha os recursos
-                            br.close();
-                            fr.close();
-                            bw.close();
-                            fw.close();
+                            //br.close();
+                            //fr.close();
+                            //bw.close();
+                            //fw.close();
                         }else{                   
-                            
+                            verificaEntrada=1;
                             retornoJOption = Integer.parseInt(JOptionPane.showInputDialog("O id do cliente já existe. \n Deseja inserir um novo id de vinho nesse idCliente? \n Digite: \n 1 - Para sim \n 2 - Para não"));
                             if(retornoJOption==1){
+                                System.out.println("Entrando no retorno");
                                 cont=0;
                                 while( br.ready() ){
                         
                                     String linha = br.readLine();
+                                    
+                                    System.out.println("Printando a linha");
                                     System.out.println(linha);
-                                    if(cont>0&&cont+1==i){                       
+                                    System.out.println("-----");
+                                    if(cont==i-1){                       
                                     //faz algo com a linha
-                                        bw.write(linha+","+jtf_idVinho_clienteVinho.getText());
+                                        //bw.write(linha+","+jtf_idVinho_clienteVinho.getText());
+                                        System.out.println(linha+","+jtf_idVinho_clienteVinho.getText());
                                     }
+                                    System.out.println("Contador "+cont);
                                     cont = cont+1;            
                     
                                 }
+                                System.out.println("Saindo br rider");
                             }
                             
                             bw.close();
@@ -480,18 +489,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             fr.close();
                         }
                     }
-                    
-                }              
+                    if(verificaEntrada==0){
+                        bw.write(jtf_idCliente_clienteVinho.getText() + ";" + jtf_idVinho_clienteVinho.getText());
+                        bw.newLine();
+                        br.close();
+                        fr.close();
+                        bw.close();
+                        fw.close();
+                    }
+                //}              
             }
             
             
         } catch (IOException ex) {
-            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erro ao manipular o arquivo");
         } finally {
             try {
                 fw.close();
             } catch (IOException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Erro ao fechar");
             }
         }
     }//GEN-LAST:event_jbt_clienteVinhoActionPerformed

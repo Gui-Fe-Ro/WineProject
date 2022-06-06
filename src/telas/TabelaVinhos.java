@@ -180,12 +180,12 @@ public class TabelaVinhos extends javax.swing.JFrame {
             
             
         } catch (IOException ex) {
-            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erro ao abrir arquivo vinculo");
         } finally {
             try {
                 fw.close();
             } catch (IOException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Erro ao fechar writer vinculo");
             }
         }
     }//GEN-LAST:event_jbt_buscarVInhosActionPerformed
